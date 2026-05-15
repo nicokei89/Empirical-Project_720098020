@@ -75,15 +75,8 @@ The main explanatory variables are:
 
 - Run the notebook cells from top to bottom.
 
-- The notebook contains the full project, including:
-  - data loading
-  - data cleaning
-  - data merging
-  - data analysis
-  - regression modelling
-  - graph creation
-  - final blog writing
-
+- The notebook contains the full project
+  
 -Then you will get all the 5 graph and 2 table 
 
 - If running the separate Python files, run them in this order:
