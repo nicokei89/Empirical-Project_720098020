@@ -100,6 +100,10 @@ The main explanatory variables are:
 
 Please keep the original file names unchanged, as the notebook and Python scripts use these file names to load the datasets and generate the outputs.
 
+# Blog Link 
+https://hackmd.io/@chunheikei/rJHjelX1Gg
+
+
 ## Directory Structure
 
 Directory Structure
