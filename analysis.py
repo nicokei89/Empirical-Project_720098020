@@ -2,6 +2,13 @@ import pandas as pd
 import statsmodels.api as sm
 from sklearn.preprocessing import StandardScaler
 
+# Load the cleaned dataset created by clean.py
+clean_data_path = os.path.join("data", "clean_merged_analysis_data.csv")
+
+# Create an output folder to save analysis results
+output_folder = "outputs"
+os.makedirs(output_folder, exist_ok=True)
+
 # Drop rows with missing values in the variables used for analysis
 # This avoids errors in regression models and plots
 analysis_df = merged_df.dropna(
