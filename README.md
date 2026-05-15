@@ -84,7 +84,7 @@ The main explanatory variables are:
   - graph creation
   - final blog writing
 
--Then you will get all the 5 graph and two table 
+-Then you will get all the 5 graph and 2 table 
 
 - If running the separate Python files, run them in this order:
   1. `clean.py`
@@ -99,4 +99,41 @@ The main explanatory variables are:
 ## Important Note
 
 Please keep the original file names unchanged, as the notebook and Python scripts use these file names to load the datasets and generate the outputs.
+
+## Directory Structure
+
+Directory Structure
+The project folder is organised as follows:
+
+- `README.md`
+- `blog.ipynb`
+- `clean.py`
+- `analysis.py`
+- `graph.py`
+  
+- `World Happiness Report.csv`
+- `CLASS_2025_10_07.xlsx`
+- `WHR25_Data_Figure_2.1v3.xlsx`
+- `clean_happiness_data.csv`
+- `clean_merged_analysis_data.csv`
+  
+- `Table 1.png`
+- `Table 2.png`
+  
+- `Graph 1.png`
+- `Graph 2.png`
+- `Graph 3.png`
+- `Graph 4.png`
+- `Graph 5.png`
+
+# Contact details 
+Name: Nico Kei 
+
+Email: cnnk201@exeter.ac.uk
+
+# Reference 
+World Bank Country and Lending Groups – World Bank Data Help Desk. (n.d.-b). https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups
+
+Data sharing | The World Happiness Report. (n.d.). https://www.worldhappiness.report/data-sharing/
+
 
