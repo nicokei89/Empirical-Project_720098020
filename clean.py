@@ -144,7 +144,3 @@ analysis_df = merged_df.dropna(
 
 # Check final analysis dataset
 analysis_df.shape
-
-# Summary statistics help us understand the scale and spread of each variable
-analysis_df[["Happiness Score","Economy","Family","Health",
-             "Freedom","Generosity","Corruption"]].describe()
