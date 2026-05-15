@@ -52,36 +52,16 @@ happiness_df.info()
 
 # Keep only the columns needed from the World Happiness Report
 happiness_clean = happiness_df[
-    [
-        "Country",
-        "Happiness Score",
-        "Economy",
-        "Family",
-        "Health",
-        "Freedom",
-        "Generosity",
-        "Corruption",
-        "Job Satisfaction",
-        "Region"
-    ]
-].copy()
+    ["Country","Happiness Score", "Economy", "Family","Health","Freedom",
+     "Generosity","Corruption","Job Satisfaction","Region"]].copy()
 
 # Keep only useful columns from the World Bank dataset
 income_clean = income_df[
-    [
-        "Economy",
-        "Code",
-        "Region",
-        "Income group"
-    ]
-].copy()
+    ["Economy","Code", "Region","Income group"]].copy()
 
 # Rename the World Bank region column so it does not conflict with the happiness region column
 income_clean = income_clean.rename(
-    columns={
-        "Region": "World Bank Region"
-    }
-)
+    columns={"Region": "World Bank Region"})
 
 # Display cleaned happiness data
 happiness_clean.head()
@@ -121,7 +101,7 @@ name_corrections = {
 happiness_clean["Country_merge"] = happiness_clean["Country"].replace(name_corrections)
 
 # Check the result
-happiness_clean[["Country", "Country_merge"]].head
+happiness_clean[["Country", "Country_merge"]].head()
 
 # Merge the two datasets using the cleaned country names
 merged_df = happiness_clean.merge(
@@ -144,13 +124,14 @@ unmatched
 # We check how many countries are missing income group.
 print("Number of countries without income group:", merged_df["Income group"].isna().sum())
 
+# Count missing values in each column
+merged_df.isna().sum()
+
 # Rename columns after merging to make them clearer
 merged_df = merged_df.rename(
     columns={
         "Economy_x": "Economy",
-        "Economy_y": "World Bank Country"
-    }
-)
+        "Economy_y": "World Bank Country"})
 
 # Check column names again
 print(merged_df.columns)
@@ -158,30 +139,12 @@ print(merged_df.columns)
 # Drop rows with missing values in the variables used for analysis
 # This avoids errors in regression models and plots
 analysis_df = merged_df.dropna(
-    subset=[
-        "Happiness Score",
-        "Economy",
-        "Family",
-        "Health",
-        "Freedom",
-        "Generosity",
-        "Corruption",
-        "Income group"
-    ]
-).copy()
+    subset=["Happiness Score","Economy","Family","Health",
+            "Freedom","Generosity","Corruption","Income group"]).copy()
 
 # Check final analysis dataset
 analysis_df.shape
 
 # Summary statistics help us understand the scale and spread of each variable
-analysis_df[
-    [
-        "Happiness Score",
-        "Economy",
-        "Family",
-        "Health",
-        "Freedom",
-        "Generosity",
-        "Corruption"
-    ]
-].describe()
+analysis_df[["Happiness Score","Economy","Family","Health",
+             "Freedom","Generosity","Corruption"]].describe()
